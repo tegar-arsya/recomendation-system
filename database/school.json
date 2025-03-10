@@ -1,0 +1,25 @@
+{
+    "school": [
+        {
+            "id": 1,
+            "name": "SMAN 1 Babakan Madang",
+            "akreditasi": 3,
+            "fasilitas": 1,
+            "jarak": 3
+        },
+        {
+            "id": 2,
+            "name": "SMAN 1 Bojong Gede",
+            "akreditasi": 3,
+            "fasilitas": 3,
+            "jarak": 1
+        },
+        {
+            "id": 3,
+            "name": "SMAN 1 Caringin",
+            "akreditasi": 3,
+            "fasilitas": 3,
+            "jarak": 1
+        }
+    ]
+}
