@@ -2,8 +2,15 @@ import createError from 'http-errors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import firebase from './config/firebase.js';
+import dotenv from 'dotenv'; // Menggunakan dotenv untuk memuat variabel lingkungan
 
-import indexRouter from './routes/index.js'; // Pastikan ini sesuai dengan ekspor
+// routes
+import indexRouter from './routes/index.js';
+
+dotenv.config();
+
+firebase();
 
 var app = express();
 
@@ -11,7 +18,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.use('/', indexRouter);
 

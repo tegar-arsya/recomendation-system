@@ -2,6 +2,7 @@ import express from 'express';
 import AHP from '../functions/AHP/index.js'
 import electre from '../functions/Electre/index.js';
 import saw from '../functions/SAW/index.js';
+import { getFirestore, collection, getDoc, doc, getDocs, query, where, limit } from 'firebase/firestore';
 
 const router = express.Router();
 
@@ -41,6 +42,24 @@ router.get('/', (req, res) => {
         ranking: isRankingEqual ? rankingAhp : rankingSaw
     });
 });
+
+router.get('/listSchool', async (req, res) => {
+    try {
+        const db = getFirestore();
+        const colRef = collection(db, 'books');
+
+        const data = await getDocs(colRef).then((snapshot) => {
+            return snapshot.docs.map(doc => doc.data());
+        });
+
+        res.send({
+            data
+        })
+    } catch (error) {
+        res.status(500
+            ).json({ error: error.message });
+    }
+})
 
 // Ekspor router sebagai default
 export default router;
