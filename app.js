@@ -3,6 +3,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import firebase from './config/firebase.js';
+import {specs, swagerUi} from './config/swager.js';
 import dotenv from 'dotenv'; // Menggunakan dotenv untuk memuat variabel lingkungan
 
 // routes
@@ -18,6 +19,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/api-docs', swagerUi.serve, swagerUi.setup(specs));
 
 app.use('/', indexRouter);
 
