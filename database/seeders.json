@@ -1,0 +1,566 @@
+{
+    "schools": [
+        {
+            "id": "school-1",
+            "name": "SMAN 1 Babakan Madang",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-2",
+            "name": "SMAN 1 Bojong Gede",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-3",
+            "name": "SMKN 1 Bojong Gede",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-4",
+            "name": "SMAN 1 Caringin",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-5",
+            "name": "SMAN 1 Cariu",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-6",
+            "name": "SMKN 1 Cariu",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-7",
+            "name": "SMAN 1 Ciampea",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-8",
+            "name": "SMAN 1 Ciawi",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-9",
+            "name": "SMAN 1 Cibinong",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-10",
+            "name": "SMAN 2 Cibinong",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-11",
+            "name": "SMAN 3 Cibinong",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-12",
+            "name": "SMAN 4 Cibinong",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-13",
+            "name": "SMKN 1 Cibinong",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-14",
+            "name": "SMKN 2 Cibinong",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-15",
+            "name": "SMAN 1 Cibungbulang",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-16",
+            "name": "SMAN 1 Cigombong",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-17",
+            "name": "SMAN 1 Cigudeg",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-18",
+            "name": "SMAN 1 Cijeruk",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-19",
+            "name": "SMAN 1 Cileungsi",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-20",
+            "name": "SMAN 2 Cileungsi",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-21",
+            "name": "SMKN 1 Cileungsi",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-22",
+            "name": "SMAN 1 Ciomas",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-23",
+            "name": "SMKN 1 Ciomas",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-24",
+            "name": "SMAN 1 Cisarua",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-25",
+            "name": "SMKN 1 Cisarua",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-26",
+            "name": "SMAN 1 Ciseeng",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-27",
+            "name": "SMAN 1 Citeureup",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-28",
+            "name": "SMAN 1 Dramaga",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-29",
+            "name": "SMAN 1 Gunung Sindur",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-30",
+            "name": "SMKN 1 Gunung Sindur",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-31",
+            "name": "SMAN 1 Gunung Putri",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-32",
+            "name": "SMAN 2 Gunung Putri",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-33",
+            "name": "SMKN 1 Gunung Putri",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-34",
+            "name": "SMAN 1 Jasinga",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-35",
+            "name": "SMAN 1 Jonggol",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-36",
+            "name": "SMAN 2 Jonggol",
+            "type": "sma",
+            "akreditasi": "B",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-37",
+            "name": "SMKN 1 Kemang",
+            "type": "smk",
+            "akreditasi": "B",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-38",
+            "name": "SMAN 1 Klapanunggal",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-39",
+            "name": "SMAN 1 Leuwiliang",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-40",
+            "name": "SMKN 1 Leuwiliang",
+            "type": "smk",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-41",
+            "name": "SMAN 1 Leuwisadeng",
+            "type": "sma",
+            "akreditasi": "B",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-42",
+            "name": "SMAN 1 Megamendung",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-43",
+            "name": "SMAN 1 Nanggung",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-44",
+            "name": "SMAN 1 Pamijahan",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-45",
+            "name": "SMAN 1 Parung",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-46",
+            "name": "SMAN 1 Parung Panjang",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-47",
+            "name": "SMAN 1 Ranca Bungur",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-48",
+            "name": "SMAN 1 Rumpin",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-49",
+            "name": "SMAN 1 Sukajaya",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-50",
+            "name": "SMAN 1 Sukamakmur",
+            "type": "sma",
+            "akreditasi": "B",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-51",
+            "name": "SMAN 1 Sukaraja",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-52",
+            "name": "SMAN 1 Tajurhalang",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "layak"
+        },
+        {
+            "id": "school-53",
+            "name": "SMAN 1 Tamansari",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-54",
+            "name": "SMAN 1 Tanjung Sari",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-55",
+            "name": "SMAN 1 Tenjo",
+            "type": "sma",
+            "akreditasi": "A",
+            "fasilitas": "kurang layak"
+        },
+        {
+            "id": "school-56",
+            "name": "SMAN 1 Tenjolaya",
+            "type": "sma",
+            "akreditasi": "B",
+            "fasilitas": "kurang layak"
+        }
+    ],
+    "address": [
+        {
+            "id": "address-1",
+            "name": "Babakan Madang"
+        },
+        {
+            "id": "address-2",
+            "name": "Bojong Gede"
+        },
+        {
+            "id": "address-3",
+            "name": "Caringin"
+        },
+        {
+            "id": "address-4",
+            "name": "Cariu"
+        },
+        {
+            "id": "address-5",
+            "name": "Ciampea"
+        },
+        {
+            "id": "address-6",
+            "name": "Ciawi"
+        },
+        {
+            "id": "address-7",
+            "name": "Cibinong"
+        },
+        {
+            "id": "address-8",
+            "name": "Cibungbulang"
+        },
+        {
+            "id": "address-9",
+            "name": "Cigombong"
+        },
+        {
+            "id": "address-10",
+            "name": "Cigudeg"
+        },
+        {
+            "id": "address-11",
+            "name": "Cijeruk"
+        },
+        {
+            "id": "address-12",
+            "name": "Cileungsi"
+        },
+        {
+            "id": "address-13",
+            "name": "Ciomas"
+        },
+        {
+            "id": "address-14",
+            "name": "Cisarua"
+        },
+        {
+            "id": "address-15",
+            "name": "Ciseeng"
+        },
+        {
+            "id": "address-16",
+            "name": "Citeureup"
+        },
+        {
+            "id": "address-17",
+            "name": "Dramaga"
+        },
+        {
+            "id": "address-18",
+            "name": "Gunung Sindur"
+        },
+        {
+            "id": "address-19",
+            "name": "Gunung Putri"
+        },
+        {
+            "id": "address-20",
+            "name": "Jasinga"
+        },
+        {
+            "id": "address-21",
+            "name": "Jonggol"
+        },
+        {
+            "id": "address-22",
+            "name": "Kemang"
+        },
+        {
+            "id": "address-23",
+            "name": "Klapanunggal"
+        },
+        {
+            "id": "address-24",
+            "name": "Leuwiliang"
+        },
+        {
+            "id": "address-25",
+            "name": "Leuwisadeng"
+        },
+        {
+            "id": "address-26",
+            "name": "Megamendung"
+        },
+        {
+            "id": "address-27",
+            "name": "Nanggung"
+        },
+        {
+            "id": "address-28",
+            "name": "Pamijahan"
+        },
+        {
+            "id": "address-29",
+            "name": "Parung"
+        },
+        {
+            "id": "address-30",
+            "name": "Parung Panjang"
+        },
+        {
+            "id": "address-31",
+            "name": "Ranca Bungur"
+        },
+        {
+            "id": "address-32",
+            "name": "Rumpin"
+        },
+        {
+            "id": "address-33",
+            "name": "Sukajaya"
+        },
+        {
+            "id": "address-34",
+            "name": "Sukamakmur"
+        },
+        {
+            "id": "address-35",
+            "name": "Sukaraja"
+        },
+        {
+            "id": "address-36",
+            "name": "Tajurhalang"
+        },
+        {
+            "id": "address-37",
+            "name": "Tamansari"
+        },
+        {
+            "id": "address-38",
+            "name": "Tanjung Sari"
+        },
+        {
+            "id": "address-39",
+            "name": "Tenjo"
+        },
+        {
+            "id": "address-40",
+            "name": "Tenjolaya"
+        }
+    ],
+    "distance": [
+        {
+            "id": "direction-1",
+            "school_id": "school-1",
+            "address_1": "address-1",
+            "address_2": ["address-16", "address-35", "address-26" ]
+        }
+    ]
+}
