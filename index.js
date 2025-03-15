@@ -40,10 +40,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/api-docs', swagerUi.serve, swagerUi.setup(swagerDocument));
+// app.use('/api-docs', swagerUi.serve, swagerUi.setup(swagerDocument));
 
-app.use('/', swagerUi.serve, swagerUi.setup(swagerDocument));
-app.use('/seeder', seederRouter);
+// app.use('/', swagerUi.serve, swagerUi.setup(swagerDocument));
+// app.use('/seeder', seederRouter);
 app.use('/recomendation_system', recomendationSyestemRouter);
 
 // catch 404 and forward to error handler
