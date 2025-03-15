@@ -9,15 +9,15 @@ router.post('/schools', async(req, res) => {
         const db = getFirestore();
 
         for (const value of seeders.schools) {
-            await setDoc(doc(db, "schools", value.id), {
-                id: value.id,
+            await setDoc(doc(db, "schools", value.school_id), {
+                id: value.school_id,
                 name: value.name,
                 type: value.type,
                 accreditation: value.akreditasi,
                 facility: value.fasilitas
             })
 
-            console.log(`data ${value.id} berhasil ditambahkan!`)
+            console.log(`data ${value.school_id} berhasil ditambahkan!`)
         }
         
         res.status(200).send({
@@ -55,19 +55,19 @@ router.post('/distance', async(req, res) => {
     try {
         const db = getFirestore();
         for (const value of seeders.distance) {
-            await setDoc(doc(db, "direction", value.id), {
+            await setDoc(doc(db, "direction", value.distance_id), {
                 school_id: value.school_id,
                 priority_1: {
-                    address_id: value.address_1,
+                    address_id: value.priority_1,
                     value: 3
                 },
                 priority_2: {
-                    address_id: value.address_2,
+                    address_id: value.priority_2,
                     value: 2
                 }
             })
 
-            console.log(`data ${value.id} berhasil ditambahkan!`)
+            console.log(`data ${value.distance_id} berhasil ditambahkan!`)
         }
 
         res.status(200).send({
