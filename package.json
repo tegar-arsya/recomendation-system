@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "serv": "nodemon node ./bin/www",
     "start": "node ./bin/www"
   },
   "dependencies": {
