@@ -1,9 +1,7 @@
-import fs from 'fs'
-
-const fileAHPData = fs.readFileSync('./database/ahp.json', 'utf8');
-const ahp = JSON.parse(fileAHPData)
+import loadJSON from '../../config/utils.js'
 
 export default function normalization(data){
+    const ahp = loadJSON('../../database/ahp.json');
     const highestGlobalScore = data.reduce((max, current) => {
         return (current.global_score > max.global_score) ? current : max;
     }).global_score;

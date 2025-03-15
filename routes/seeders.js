@@ -1,9 +1,8 @@
 import express from 'express';
-import fs from 'fs'
+import loadJSON from '../config/utils.js'
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
-const fileSeedersData = fs.readFileSync('./database/seeders.json', 'utf-8');
-const seeders = JSON.parse(fileSeedersData)
+const seeders = loadJSON('./database/seeders.json')
 const router = express.Router();
 
 router.post('/schools', async(req, res) => {

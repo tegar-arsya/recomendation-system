@@ -3,9 +3,9 @@ import AHP from '../functions/AHP/index.js'
 import electre from '../functions/electre/index.js';
 import saw from '../functions/SAW/index.js';
 import fs from 'fs'
+import loadJSON from '../config/utils.js'
 
-const fileSchoolData = fs.readFileSync('./database/school.json', 'utf8');
-const schoolData = JSON.parse(fileSchoolData)
+const schoolData = loadJSON('../database/ahp.json');
 const router = express.Router();
 
 router.get('/', (req, res) => {
