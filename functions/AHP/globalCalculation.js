@@ -1,7 +1,6 @@
-import loadJSON from '../../config/utils.js'
+import ahp from '../../database/ahp.json' assert { type: 'json' };
 
 export default function globalCalculation(normalization) {
-    const ahp = loadJSON('../../database/ahp.json');
     const ahpData = ahp.criteria;
 
     const result = normalization.map(item => {

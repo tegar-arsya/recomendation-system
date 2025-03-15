@@ -1,7 +1,6 @@
-import loadJSON from '../../config/utils.js'
+import ahp from '../../database/ahp.json' assert { type: 'json' };
 
 export default function normalization(data){
-    const ahp = loadJSON('../../database/ahp.json');
     const highestGlobalScore = data.reduce((max, current) => {
         return (current.global_score > max.global_score) ? current : max;
     }).global_score;

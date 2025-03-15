@@ -1,7 +1,6 @@
-import loadJSON from '../../config/utils.js'
+import ahp from '../../database/ahp.json' assert { type: 'json' };
 
 export default function normalization(data) {
-    const ahp = loadJSON('../../database/ahp.json');
     let globalNormalization = 0;
 
     // normalization score global (all value)
