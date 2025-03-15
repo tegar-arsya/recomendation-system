@@ -9,6 +9,7 @@ import dotenv from 'dotenv'; // Menggunakan dotenv untuk memuat variabel lingkun
 // routes
 import indexRouter from './routes/index.js';
 import seederRouter from './routes/seeders.js';
+import recomendationSyestemRouter from './routes/recomendation_system.js';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use('/api-docs', swagerUi.serve, swagerUi.setup(specs));
 
 app.use('/', indexRouter);
 app.use('/seeder', seederRouter);
+app.use('/recomendation_system', recomendationSyestemRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
