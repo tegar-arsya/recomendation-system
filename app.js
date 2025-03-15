@@ -3,8 +3,10 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import firebase from './config/firebase.js';
-import {specs, swagerUi} from './config/swager.js';
+import {swagerUi} from './config/swager.js';
 import dotenv from 'dotenv'; // Menggunakan dotenv untuk memuat variabel lingkungan
+import fs from 'fs'
+import yaml from 'yaml'
 
 // routes
 import indexRouter from './routes/index.js';
@@ -16,13 +18,15 @@ dotenv.config();
 firebase();
 
 var app = express();
+const fileSwager = fs.readFileSync('./config/swager.yaml', 'utf-8')
+const swagerDocument = yaml.parse(fileSwager)
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/api-docs', swagerUi.serve, swagerUi.setup(specs));
+app.use('/api-docs', swagerUi.serve, swagerUi.setup(swagerDocument));
 
 app.use('/', indexRouter);
 app.use('/seeder', seederRouter);

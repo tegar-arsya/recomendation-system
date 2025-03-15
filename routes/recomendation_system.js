@@ -20,60 +20,61 @@ router.post('/', schema, async(req, res) => {
 
     // validation
     if(validation.errors.length  > 0) {
-        return res.status(400).send(result)
+        return res.status(400).send(validation)
     }
 
     // firebase
+    const { address: userAddress, type: userType } = body;
+
     const schools = [];
     const direction = [];
 
     let docs = await getDocs(
-                        query(
-                            collection(db, "schools"), 
-                                body.type ? where('type', '==', body.type) : '',
-
-                            )
+                            query(
+                                collection(db, "schools"), 
+                                userType ? where('type', '==', userType) : '',
+                                )
                         )
 
     docs.forEach((doc) => {
-        schools.push(doc.data())
+            schools.push(doc.data())
     })
 
     docs = await getDocs(collection(db, "direction"))
     docs.forEach((doc) => {
-        direction.push(doc.data())
+            direction.push(doc.data())
     })
 
     // main function
-    const userAddress = body.address;
+    
     const result = schools.map((school) => {
-        let distance_value = 1
-        let accreditation_value = 1
-        let facility_value = 1
-
-        const distance = direction.find((v) => v.school_id === school.id)
-
-        if(distance) {
-            if (distance.priority_1.address_id === userAddress) {
-                distance_value = distance.priority_1.value
-            }
-            if (distance_value === 1) {
-                if (distance.priority_2.address_id.find((v) => v === userAddress)) {
-                    distance_value = distance.priority_2.value
+            let distance_value = 1
+            let accreditation_value = 1
+            let facility_value = 1
+    
+            const distance = direction.find((v) => v.school_id === school.id)
+    
+            if(distance) {
+                if (distance.priority_1.address_id === userAddress) {
+                    distance_value = distance.priority_1.value
+                }
+                if (distance_value === 1) {
+                    if (distance.priority_2.address_id.find((v) => v === userAddress)) {
+                        distance_value = distance.priority_2.value
+                    }
                 }
             }
-        }
-
-        school.accreditation === 'A' ? accreditation_value = 3 : school.accreditation === 'B' ? accreditation_value = 2 : accreditation_value = 1
-        school.facility === 'layak' ? facility_value = 3 : school.facility === 'setara' ? facility_value = 2 : facility_value = 1
-
-        return {
-            id: school.id,
-            name: school.name,
-            jarak: distance_value,
-            akreditasi: accreditation_value,
-            fasilitas: facility_value,
-        }
+    
+            school.accreditation === 'A' ? accreditation_value = 3 : school.accreditation === 'B' ? accreditation_value = 2 : accreditation_value = 1
+            school.facility === 'layak' ? facility_value = 3 : school.facility === 'setara' ? facility_value = 2 : facility_value = 1
+    
+            return {
+                id: school.id,
+                name: school.name,
+                jarak: distance_value,
+                akreditasi: accreditation_value,
+                fasilitas: facility_value,
+            }
     })
 
     // method
@@ -104,7 +105,6 @@ router.post('/', schema, async(req, res) => {
             arr2.some((item2) => item1 === item2)
         );
     };
-
 
     res.json({
         ahp: ahpResult,
