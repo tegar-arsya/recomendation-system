@@ -7,9 +7,9 @@ export default function utils() {
         try {
             const __filename = fileURLToPath(import.meta.url);
             const __dirname = path.dirname(__filename);
-            const ahpFilePath = path.resolve(__dirname, dirname);
+            const jsonFilePath = path.resolve(__dirname, dirname);
 
-            const data = await readFile(ahpFilePath, 'utf-8');
+            const data = await readFile(jsonFilePath, 'utf-8');
             const parsedData = JSON.parse(data);
         
             if (!parsedData || typeof parsedData !== 'object') {

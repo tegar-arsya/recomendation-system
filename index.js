@@ -7,6 +7,9 @@ import {swagerUi} from './config/swager.js';
 import dotenv from 'dotenv'; // Menggunakan dotenv untuk memuat variabel lingkungan
 import fs from 'fs'
 import yaml from 'yaml'
+import { readFile } from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import http from 'http';
 
 // routes
@@ -19,8 +22,18 @@ dotenv.config();
 firebase();
 
 var app = express();
-const fileSwager = fs.readFileSync('./config/swager.yaml', 'utf-8')
-const swagerDocument = yaml.parse(fileSwager)
+
+// Menggunakan path.join untuk membuat jalur yang sesuai dengan sistem operasi
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const filePath = path.resolve(__dirname, './config/swager.yaml');
+console.log(filePath)
+
+const yamlFile = fs.readFileSync(filePath, 'utf-8')
+const swagerDocument = yaml.parse(yamlFile)
+
+// const fileSwager = fs.readFileSync('./config/swager.yaml', 'utf-8')
 
 app.use(logger('dev'));
 app.use(express.json());
