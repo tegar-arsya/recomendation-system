@@ -1,7 +1,9 @@
 import express from 'express';
-import seeders from '../database/seeders.json' assert { type: 'json' };
-import { getFirestore, collection, getDoc, doc, getDocs, query, where, limit, setDoc } from 'firebase/firestore';
+import fs from 'fs'
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
+const fileSeedersData = fs.readFileSync('./database/seeders.json', 'utf-8');
+const seeders = JSON.parse(fileSeedersData)
 const router = express.Router();
 
 router.post('/schools', async(req, res) => {

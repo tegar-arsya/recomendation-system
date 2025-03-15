@@ -1,6 +1,6 @@
 import express, { response } from 'express';
 
-import { getFirestore, collection, getDoc, doc, getDocs, query, where, limit } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import { body, validationResult } from 'express-validator';
 import AHP from '../functions/AHP/index.js';
 import electre from '../functions/Electre/index.js';

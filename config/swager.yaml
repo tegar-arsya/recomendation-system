@@ -38,7 +38,7 @@ paths:
           description: body properties address is required
   # seeders
   /seeder/schools:
-    get:
+    post:
       tags:
         - Seeder
       summary: process seeds on firestore database table schools
@@ -47,7 +47,7 @@ paths:
           description: Succses & firestore database table schools updated
 
   /seeder/address:
-    get:
+    post:
       tags:
         - Seeder
       summary: process seeds on firestore database table address
@@ -56,7 +56,7 @@ paths:
           description: Succses & firestore database table address updated
 
   /seeder/distance:
-    get:
+    post:
       tags:
         - Seeder
       summary: process seeds on firestore database table distance
