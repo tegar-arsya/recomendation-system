@@ -2,6 +2,9 @@ import express, { response } from 'express';
 
 import { getFirestore, collection, getDoc, doc, getDocs, query, where, limit } from 'firebase/firestore';
 import { body, validationResult } from 'express-validator';
+import AHP from '../functions/AHP/index.js';
+import electre from '../functions/Electre/index.js';
+import saw from '../functions/SAW/index.js';
   
 const router = express.Router();
 
@@ -67,14 +70,48 @@ router.post('/', schema, async(req, res) => {
         return {
             id: school.id,
             name: school.name,
-            distance_value,
-            accreditation_value,
-            facility_value,
+            jarak: distance_value,
+            akreditasi: accreditation_value,
+            fasilitas: facility_value,
         }
     })
-    return res.send({
-        result
+
+    // method
+    const ahpResult = AHP(result);
+    const electreResult = electre(ahpResult);
+    const sawResult = saw(ahpResult);
+
+    // ranking
+    const rankingByAhp = ahpResult.sort((a, b) => b.global_score - a.global_score);
+    const rankingBySaw = sawResult.result.sort((a, b) => b.value - a.value);
+
+    const rankingAhp = rankingByAhp.map((item) => {
+        return {
+            id: item.id,
+            name: item.name
+        }
     })
+
+    const rankingSaw = rankingBySaw.map((item) => {
+        return {
+            id: item.id,
+            name: item.name
+        }
+    })
+
+    const isRankingEqual = (arr1, arr2) => {
+        return arr1.length === arr2.length && arr1.every((item1) =>
+            arr2.some((item2) => item1 === item2)
+        );
+    };
+
+
+    res.json({
+        ahp: ahpResult,
+        electre: electreResult,
+        saw: sawResult,
+        ranking: isRankingEqual ? rankingAhp : rankingSaw
+    });
 })
 
 export default router;
