@@ -2,7 +2,7 @@
     "version": 1,
     "builds": [
      {
-      "src": "bin/.www",
+      "src": "bin/www",
       "use": "@vercel/node",
       "config": { "includeFiles": ["bin/**", "config/**", "database/**", "functions/**", "public/**", "routes/**", "validator/**"] }
      }
@@ -10,7 +10,7 @@
     "routes": [
      {
        "src": "/(.*)",
-       "dest": "bin/.www"
+       "dest": "bin/www"
      }
     ]
 }
