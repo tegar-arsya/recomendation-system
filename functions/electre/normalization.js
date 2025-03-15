@@ -1,9 +1,7 @@
-import fs from 'fs'
-
-const fileAHPData = fs.readFileSync('./database/ahp.json', 'utf8');
-const ahp = JSON.parse(fileAHPData)
+import loadJSON from '../../config/utils.js'
 
 export default function normalization(data) {
+    const ahp = loadJSON('../../database/ahp.json');
     let globalNormalization = 0;
 
     // normalization score global (all value)
