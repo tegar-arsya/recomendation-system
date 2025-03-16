@@ -1,20 +1,10 @@
 import { readFile } from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 export default function utils() {
     const loadJSON = async () => {
         try {
-            // Dapatkan path dari environment variable
-            const relativePath = process.env.DATABASE_PATH || './database/ahp.json';
-            if (!relativePath) {
-                throw new Error('Environment variable DATABASE_PATH tidak ditemukan.');
-            }
-
-            // Dapatkan path absolut ke file JSON
-            const __filename = fileURLToPath(import.meta.url);
-            const __dirname = path.dirname(__filename);
-            const jsonFilePath = path.resolve(__dirname, relativePath);
+            // Gunakan path absolut
+            const jsonFilePath = '/var/task/database/ahp.json';
 
             // Debug path
             console.log('Mencoba membaca file JSON dari path:', jsonFilePath);
