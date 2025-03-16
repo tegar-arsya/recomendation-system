@@ -2,10 +2,11 @@ import createError from 'http-errors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import fs from 'fs'; // Tambahkan ini
 import firebase from './config/firebase.js';
-import {swagerUi} from './config/swager.js';
+import { swagerUi } from './config/swager.js';
 import dotenv from 'dotenv';
-import yaml from 'yaml'
+import yaml from 'yaml';
 
 // routes
 import indexRouter from './routes/index.js';
@@ -17,8 +18,8 @@ dotenv.config();
 firebase();
 
 var app = express();
-const fileSwager = fs.readFileSync('./config/swager.yaml', 'utf-8')
-const swagerDocument = yaml.parse(fileSwager)
+const fileSwager = fs.readFileSync('./config/swager.yaml', 'utf-8');
+const swagerDocument = yaml.parse(fileSwager);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -44,4 +45,4 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-export default app; 
+export default app;

@@ -1,7 +1,7 @@
 import utils from '../../config/utils.js';
 const { loadJSON } = utils();
 
-const ahp = await loadJSON('../../database/ahp.json');
+const ahp = await loadJSON('../database/ahp.json');
 
 export default function normalization(data){
     const highestGlobalScore = data.reduce((max, current) => {
