@@ -7,6 +7,7 @@
     "start": "nodemon node ./bin/www.js"
   },
   "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.1",
     "body-parser": "^1.20.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -18,6 +19,7 @@
     "nodemon": "^3.1.9",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
-    "yaml": "^2.7.0"
+    "yaml": "^2.7.0",
+    "z-schema": "^6.0.2"
   }
 }
