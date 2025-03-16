@@ -3,10 +3,6 @@ const { loadJSON } = utils();
 
 const ahp = await loadJSON();
 
-if (!ahp) {
-    throw new Error('Data AHP tidak ditemukan.');
-}
-
 export default function normalization(data){
     const highestGlobalScore = data.reduce((max, current) => {
         return (current.global_score > max.global_score) ? current : max;

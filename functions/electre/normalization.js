@@ -4,10 +4,6 @@ const { loadJSON } = utils();
 
 const ahp = await loadJSON();
 
-if (!ahp) {
-    throw new Error('Data AHP tidak ditemukan.');
-}
-
 export default function normalization(data) {
     let globalNormalization = 0;
 
