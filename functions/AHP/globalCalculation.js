@@ -1,10 +1,39 @@
-import utils from '../../config/utils.js';
-const { loadJSON } = utils();
+import { readFile } from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ahpFilePath = path.resolve(__dirname, '../../database/ahp.json');
+
+async function loadJSON(filePath) {
+    try {
+        const data = await readFile(filePath, 'utf-8');
+        console.log("✅ File loaded successfully:", filePath);
+        const parsedData = JSON.parse(data);
 
 
-const ahp = await loadJSON();
+        if (!parsedData || typeof parsedData !== 'object') {
+            throw new Error('Data JSON tidak valid.');
+        }
+        return parsedData;
+    } catch (error) {
+        console.error(`❌ Error loading JSON file: ${filePath}`, error.message);
+        return null;
+    }
+}
 
-export default function globalCalculation(normalization) {
+
+
+
+export default async function globalCalculation(normalization) {
+    const ahp = await loadJSON(ahpFilePath);
+    if (!ahp || !ahp.criteria) {
+        console.error("❌ Error: Data kriteria AHP hilang atau tidak valid.");
+        return [];
+    }
+    console.log("📊 Data AHP:", ahp);
+    
     const ahpData = ahp.criteria;
 
     const result = normalization.map(item => {

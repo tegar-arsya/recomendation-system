@@ -1,24 +1,20 @@
 import { readFile } from 'fs/promises';
 
+
 export default function utils() {
-    const loadJSON = async () => {
+    const loadJSON = async (filePath) => {
         try {
-            // Gunakan path absolut
-            const jsonFilePath = '/var/task/database/ahp.json';
-
-            // Debug path
-            console.log('Mencoba membaca file JSON dari path:', jsonFilePath);
-
-            // Baca file JSON
-            const data = await readFile(jsonFilePath, 'utf-8');
+            const data = await readFile(filePath, 'utf-8');
+            console.log("✅ File loaded successfully:", filePath);
             const parsedData = JSON.parse(data);
-
+    
+    
             if (!parsedData || typeof parsedData !== 'object') {
                 throw new Error('Data JSON tidak valid.');
             }
             return parsedData;
         } catch (error) {
-            console.error(`❌ Error loading JSON file:`, error.message);
+            console.error(`❌ Error loading JSON file: ${filePath}`, error.message);
             return null;
         }
     };

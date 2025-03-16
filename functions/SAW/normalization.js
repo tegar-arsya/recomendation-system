@@ -1,7 +1,20 @@
-import utils from '../../config/utils.js';
-const { loadJSON } = utils();
+import { readFile } from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const ahp = await loadJSON();
+// Ambil direktori saat ini dengan aman di ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Path absolut ke `ahp.json`
+const ahpFilePath = path.resolve(__dirname, '../../database/ahp.json');
+
+async function loadJSON(filePath) {
+  const data = await readFile(filePath, 'utf-8');
+  return JSON.parse(data);
+}
+
+const ahp = await loadJSON(ahpFilePath);
 
 export default function normalization(data){
     const highestGlobalScore = data.reduce((max, current) => {
