@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "nodemon node ./bin/www"
+    "start": "nodemon node ./bin/www.js"
   },
   "dependencies": {
     "body-parser": "^1.20.3",
