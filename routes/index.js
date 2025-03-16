@@ -11,18 +11,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Path absolut ke `ahp.json`
-const schoolFilePath = path.resolve(__dirname, '../database/school.json');
+const ahpFilePath = path.resolve(__dirname, '../../database/ahp.json');
 
 async function loadJSON(filePath) {
   const data = await readFile(filePath, 'utf-8');
   return JSON.parse(data);
 }
 
-const schoolData = await loadJSON(schoolFilePath);
+const ahp = await loadJSON(ahpFilePath);
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
     const ahpResult = AHP(schoolData.school);
     const electreResult = electre(ahpResult);
     const sawResult = saw(ahpResult);
