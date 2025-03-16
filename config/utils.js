@@ -17,10 +17,10 @@ export default function utils() {
             }
             return parsedData;
         } catch (error) {
-            console.error(`❌ Error loading JSON file: ${ahpFilePath}`, error.message);
+            console.error(`❌ Error loading JSON file: ${dirname}`, error.message);
             return null;
         }
     }
 
-    return {loadJSON}
+    return { loadJSON };
 }

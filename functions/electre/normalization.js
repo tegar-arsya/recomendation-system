@@ -1,4 +1,7 @@
-import ahp from '../../database/ahp.json' assert { type: 'json' };
+import utils from '../../config/utils.js';
+const { loadJSON } = utils();
+
+const ahp = await loadJSON('../../database/ahp.json');
 
 export default function normalization(data) {
     let globalNormalization = 0;
@@ -23,7 +26,7 @@ export default function normalization(data) {
                 name: item.name,
                 globalNormalization: item.global_score / globalNormalization
             }
-    })
+    });
 
     // weight normalization
     const Wnormalization = singleNormalization.map(item => {
@@ -31,7 +34,7 @@ export default function normalization(data) {
             name: item.name,
             value: item.globalNormalization * ahp.criteria.akreditas
         }
-    })
+    });
 
-    return Wnormalization
+    return Wnormalization;
 }

@@ -1,4 +1,7 @@
-import ahp from '../../database/ahp.json' assert { type: 'json' };
+import utils from '../../config/utils.js';
+const { loadJSON } = utils();
+
+const ahp = await loadJSON('../../database/ahp.json');
 
 export default function globalCalculation(normalization) {
     const ahpData = ahp.criteria;
@@ -12,7 +15,7 @@ export default function globalCalculation(normalization) {
             ...item,
             global_score: akreditasi + fasilitas + jarak
         };        
-    })
+    });
 
     return result;
 }

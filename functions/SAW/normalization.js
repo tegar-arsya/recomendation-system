@@ -1,4 +1,7 @@
-import ahp from '../../database/ahp.json' assert { type: 'json' };
+import utils from '../../config/utils.js';
+const { loadJSON } = utils();
+
+const ahp = await loadJSON('../../database/ahp.json');
 
 export default function normalization(data){
     const highestGlobalScore = data.reduce((max, current) => {
@@ -11,14 +14,14 @@ export default function normalization(data){
             name: item.name,
             value: item.global_score / highestGlobalScore
         }
-    })
+    });
 
     const Wmatrix = normalization.map(item => {
         return {
             ...item,
             value: item.value * ahp.criteria.akreditas
         }
-    })
+    });
 
     return Wmatrix;
 }
