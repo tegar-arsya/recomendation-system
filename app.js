@@ -26,7 +26,8 @@ const __dirname = path.dirname(__filename);
 const swagerFilePath = path.resolve(__dirname, './config/swager.yaml');
 
 // Baca file swager.yaml
-const fileSwager = readFileSync(swagerFilePath, 'utf-8');
+const fileSwager = fs.readFileSync(swagerFilePath, 'utf-8');
+
 const swagerDocument = yaml.parse(fileSwager);
 
 app.use(logger('dev'));
