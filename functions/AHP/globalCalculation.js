@@ -1,4 +1,4 @@
-import utils from '../config/utils.js';
+import utils from '../../config/utils.js';
 const { loadJSON } = utils();
 
 const ahp = await loadJSON('../database/ahp.json');
