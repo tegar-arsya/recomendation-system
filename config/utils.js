@@ -20,7 +20,7 @@ export default function utils() {
             console.error(`❌ Error loading JSON file: ${dirname}`, error.message);
             return null;
         }
-    }
+    };
 
     return { loadJSON };
 }
