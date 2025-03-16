@@ -3,6 +3,8 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import fs from 'fs'; // Tambahkan ini
+import path from 'path';
+import { fileURLToPath } from 'url';
 import firebase from './config/firebase.js';
 import { swagerUi } from './config/swager.js';
 import dotenv from 'dotenv';
@@ -18,7 +20,13 @@ dotenv.config();
 firebase();
 
 var app = express();
-const fileSwager = fs.readFileSync('./config/swager.yaml', 'utf-8');
+// Dapatkan path absolut ke file swager.yaml
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const swagerFilePath = path.resolve(__dirname, './config/swager.yaml');
+
+// Baca file swager.yaml
+const fileSwager = readFileSync(swagerFilePath, 'utf-8');
 const swagerDocument = yaml.parse(fileSwager);
 
 app.use(logger('dev'));
