@@ -1,6 +1,5 @@
 import express from 'express';
-import seeders from '../database/seeders.json' assert { type: 'json' };
-import { getFirestore, collection, getDoc, doc, getDocs, query, where, limit, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 const router = express.Router();
 

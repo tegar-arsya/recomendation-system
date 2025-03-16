@@ -4,8 +4,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import firebase from './config/firebase.js';
 import {swagerUi} from './config/swager.js';
-import dotenv from 'dotenv'; // Menggunakan dotenv untuk memuat variabel lingkungan
-import fs from 'fs'
+import dotenv from 'dotenv';
 import yaml from 'yaml'
 
 // routes
