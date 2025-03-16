@@ -1,28 +1,24 @@
 import express from 'express';
-import AHP from '../functions/AHP/index.js'
+import AHP from '../functions/AHP/index.js';
 import electre from '../functions/electre/index.js';
 import saw from '../functions/SAW/index.js';
-import { readFile } from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import utils from '../config/utils.js';
 
-// Ambil direktori saat ini dengan aman di ESM
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Path absolut ke `ahp.json`
-const ahpFilePath = path.resolve(__dirname, '../../database/ahp.json');
-
-async function loadJSON(filePath) {
-  const data = await readFile(filePath, 'utf-8');
-  return JSON.parse(data);
-}
-
-const ahp = await loadJSON(ahpFilePath);
+const { loadJSON } = utils();
 
 const router = express.Router();
 
+// Load JSON data
+let schoolData;
+(async () => {
+    schoolData = await loadJSON('../database/school.json');
+})();
+
 router.get('/', (req, res) => {
+    if (!schoolData) {
+        return res.status(500).json({ error: 'Data sekolah tidak ditemukan.' });
+    }
+
     const ahpResult = AHP(schoolData.school);
     const electreResult = electre(ahpResult);
     const sawResult = saw(ahpResult);
@@ -34,15 +30,15 @@ router.get('/', (req, res) => {
         return {
             id: item.id,
             name: item.name
-        }
-    })
+        };
+    });
 
     const rankingSaw = rankingBySaw.map((item) => {
         return {
             id: item.id,
             name: item.name
-        }
-    })
+        };
+    });
     
     const isRankingEqual = (arr1, arr2) => {
         return arr1.length === arr2.length && arr1.every((item1) =>
