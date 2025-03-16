@@ -1,12 +1,24 @@
 import express from 'express';
-import AHP from '../functions/AHP/index.js'
-import electre from '../functions/Electre/index.js';
+import AHP from '../functions/AHP/index.js';
+import electre from '../functions/electre/index.js';
 import saw from '../functions/SAW/index.js';
-import schoolData from '../database/school.json' assert { type: 'json' };
+import utils from '../config/utils.js';
+
+const { loadJSON } = utils();
 
 const router = express.Router();
 
+// Load JSON data
+let schoolData;
+(async () => {
+    schoolData = await loadJSON('../database/school.json');
+})();
+
 router.get('/', (req, res) => {
+    if (!schoolData) {
+        return res.status(500).json({ error: 'Data sekolah tidak ditemukan.' });
+    }
+
     const ahpResult = AHP(schoolData.school);
     const electreResult = electre(ahpResult);
     const sawResult = saw(ahpResult);
@@ -18,15 +30,15 @@ router.get('/', (req, res) => {
         return {
             id: item.id,
             name: item.name
-        }
-    })
+        };
+    });
 
     const rankingSaw = rankingBySaw.map((item) => {
         return {
             id: item.id,
             name: item.name
-        }
-    })
+        };
+    });
     
     const isRankingEqual = (arr1, arr2) => {
         return arr1.length === arr2.length && arr1.every((item1) =>
