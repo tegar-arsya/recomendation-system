@@ -1,8 +1,9 @@
 import utils from '../../config/utils.js';
 const { loadJSON } = utils();
-// Debug path
-console.log('Mencoba membaca file JSON dari path:', '../../database/ahp.json');
-const ahp = await loadJSON('../../../database/ahp.json');
+
+
+const ahp = await loadJSON();
+
 if (!ahp) {
     throw new Error('Data AHP tidak ditemukan.');
 }
