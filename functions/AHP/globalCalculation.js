@@ -1,8 +1,13 @@
 import utils from '../../config/utils.js';
 const { loadJSON } = utils();
 
-const ahp = await loadJSON('../database/ahp.json');
 
+// Debug path
+console.log('Mencoba membaca file JSON dari path:', '../../database/ahp.json');
+const ahp = await loadJSON('../../database/ahp.json');
+if (!ahp) {
+    throw new Error('Data AHP tidak ditemukan.');
+}
 export default function globalCalculation(normalization) {
     if (!ahp) {
         throw new Error('Data AHP tidak ditemukan.');
