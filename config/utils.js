@@ -6,7 +6,7 @@ export default function utils() {
     const loadJSON = async () => {
         try {
             // Dapatkan path dari environment variable
-            const relativePath = process.env.DATABASE_PATH;
+            const relativePath = process.env.DATABASE_PATH || './database/ahp.json';
             if (!relativePath) {
                 throw new Error('Environment variable DATABASE_PATH tidak ditemukan.');
             }
