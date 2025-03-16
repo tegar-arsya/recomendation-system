@@ -4,6 +4,9 @@ const { loadJSON } = utils();
 const ahp = await loadJSON('../../database/ahp.json');
 
 export default function globalCalculation(normalization) {
+    if (!ahp) {
+        throw new Error('Data AHP tidak ditemukan.');
+    }
     const ahpData = ahp.criteria;
 
     const result = normalization.map(item => {
